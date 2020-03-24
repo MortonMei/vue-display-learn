@@ -89,6 +89,19 @@ export const constantRoutes = [
       }
     ]
   },
+  
+  {
+    path: '/charts',
+    component: Layout,
+    children: [
+      {
+        path: 'line',
+        name: 'Charts',
+        component: () => import('@/views/charts/line'),
+        meta: { title: 'Charts', icon: 'table' }
+      }
+    ]
+  },
 
   {
     path: '/nested',

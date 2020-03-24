@@ -10,10 +10,25 @@
     >
       <el-table-column align="center" label="ID" width="95">
         <template slot-scope="scope">
-          {{ scope.$index }}
+          {{ scope.$index+1 }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="Date">
+        <template slot-scope="scope">
+          {{ scope.row.date }}
+        </template>
+      </el-table-column>
+      <el-table-column label="Eur">
+        <template slot-scope="scope">
+          {{ scope.row.eur }}
+        </template>
+      </el-table-column>
+      <el-table-column label="Usd">
+        <template slot-scope="scope">
+          {{ scope.row.usd }}
+        </template>
+      </el-table-column>
+      <!-- <el-table-column label="Title">
         <template slot-scope="scope">
           {{ scope.row.title }}
         </template>
@@ -38,7 +53,7 @@
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
         </template>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
   </div>
 </template>
@@ -47,16 +62,16 @@
 import { getList } from '@/api/table'
 
 export default {
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        published: 'success',
-        draft: 'gray',
-        deleted: 'danger'
-      }
-      return statusMap[status]
-    }
-  },
+  // filters: {
+  //   statusFilter(status) {
+  //     const statusMap = {
+  //       published: 'success',
+  //       draft: 'gray',
+  //       deleted: 'danger'
+  //     }
+  //     return statusMap[status]
+  //   }
+  // },
   data() {
     return {
       list: null,
