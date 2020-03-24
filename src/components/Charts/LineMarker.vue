@@ -29,12 +29,8 @@ export default {
   },
   data() {
     return {
-      chart: null,
-      prelist: null
+      chart: null
     }
-  },
-  created() {
-    this.fetchData()
   },
   mounted() {
     this.initChart()
@@ -47,20 +43,8 @@ export default {
     this.chart = null
   },
   methods: {
-    // getData(){
-    //   return ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55']
-    // },
-    fetchData() {
-      this.listLoading = true
-      getList().then(response => {
-        this.prelist = response.data.items
-        this.listLoading = false
-      })
-    },
     initChart() {
-//基于id初始化echarts实例
       this.chart = echarts.init(document.getElementById(this.id))
-
       this.chart.setOption({
         backgroundColor: '#394056',
         title: {
@@ -87,7 +71,7 @@ export default {
           itemWidth: 14,
           itemHeight: 5,
           itemGap: 13,
-          data: ['CMCC', 'Eur', 'CUCC'],
+          data: ['Usd', 'Eur'],
           right: '4%',
           textStyle: {
             fontSize: 12,
@@ -109,17 +93,7 @@ export default {
               color: '#57617B'
             }
           },
-          data: function(){
-            // var list = ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55'];
-            // var prelist = []
-            var list = []
-             window.console.log(this.prelist)
-            for(var i = 0; i < 12; i++) {
-              list.push(this.prelist[i].date)
-            }
-            window.console.log(list)
-            return list
-          }()
+          data: []
         }],
         yAxis: [{
           type: 'value',
@@ -145,7 +119,7 @@ export default {
           }
         }],
         series: [{
-          name: 'CMCC',
+          name: 'Usd',
           type: 'line',
           smooth: true,
           symbol: 'circle',
@@ -177,7 +151,7 @@ export default {
 
             }
           },
-          data: [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122]
+          data: []
         }, {
           name: 'Eur',
           type: 'line',
@@ -211,42 +185,33 @@ export default {
 
             }
           },
-          data: [120, 110, 125, 145, 122, 165, 122, 220, 182, 191, 134, 150]
-        }, {
-          name: 'CUCC',
-          type: 'line',
-          smooth: true,
-          symbol: 'circle',
-          symbolSize: 5,
-          showSymbol: false,
-          lineStyle: {
-            normal: {
-              width: 1
-            }
-          },
-          areaStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                offset: 0,
-                color: 'rgba(219, 50, 51, 0.3)'
-              }, {
-                offset: 0.8,
-                color: 'rgba(219, 50, 51, 0)'
-              }], false),
-              shadowColor: 'rgba(0, 0, 0, 0.1)',
-              shadowBlur: 10
-            }
-          },
-          itemStyle: {
-            normal: {
-              color: 'rgb(219,50,51)',
-              borderColor: 'rgba(219,50,51,0.2)',
-              borderWidth: 12
-            }
-          },
-          data: [220, 182, 125, 145, 122, 191, 134, 150, 120, 110, 165, 122]
+          data: []
         }]
       })
+      var prelist = []
+      var xlist = []
+      var ylist1 = []
+      var ylist2 = []
+      getList().then(response => {
+            prelist = response.data.items
+             for(var i = 0; i < 12; i++) {
+              xlist.push(prelist[i].date)
+              ylist1.push(prelist[i].usd)
+              ylist2.push(prelist[i].eur)
+            }
+            this.chart.setOption({
+              xAxis: {
+                data: xlist
+              },
+              series: [{
+                name: 'Usd',
+                data: ylist1
+              },{
+                name: 'Eur',
+                data: ylist2
+              }]
+            })
+          })
     }
   }
 }
