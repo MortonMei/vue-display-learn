@@ -193,25 +193,25 @@ export default {
       var ylist1 = []
       var ylist2 = []
       getList().then(response => {
-            prelist = response.data.items
-             for(var i = 0; i < 12; i++) {
-              xlist.push(prelist[i].date)
-              ylist1.push(prelist[i].usd)
-              ylist2.push(prelist[i].eur)
-            }
-            this.chart.setOption({
-              xAxis: {
-                data: xlist
-              },
-              series: [{
-                name: 'Usd',
-                data: ylist1
-              },{
-                name: 'Eur',
-                data: ylist2
-              }]
-            })
-          })
+        prelist = response.data.items
+        for (var i = 0; i < 12; i++) {
+          xlist.push(prelist[i].date)
+          ylist1.push(prelist[i].usd)
+          ylist2.push(prelist[i].eur)
+        }
+        this.chart.setOption({
+          xAxis: {
+            data: xlist
+          },
+          series: [{
+            name: 'Usd',
+            data: ylist1
+          }, {
+            name: 'Eur',
+            data: ylist2
+          }]
+        })
+      })
     }
   }
 }

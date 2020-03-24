@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Chart from '@/components/Charts/LineMarker'
+import Chart from '@/components/Charts/LineMaker'
 
 export default {
   name: 'LineChart',

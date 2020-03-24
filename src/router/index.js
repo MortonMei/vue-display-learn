@@ -89,7 +89,7 @@ export const constantRoutes = [
       }
     ]
   },
-  
+
   {
     path: '/charts',
     component: Layout,
