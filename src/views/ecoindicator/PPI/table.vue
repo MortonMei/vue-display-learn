@@ -4,7 +4,7 @@
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
-      height="300"
+      height="500"
       border
       fit
       highlight-current-row
@@ -14,19 +14,24 @@
           {{ scope.$index+1 }}
         </template>
       </el-table-column>
-      <el-table-column label="Date">
+      <el-table-column label="月份">
         <template slot-scope="scope">
-          {{ scope.row.date }}
+          {{ scope.row.time }}
         </template>
       </el-table-column>
-      <el-table-column label="Eur">
+      <el-table-column label="当月">
         <template slot-scope="scope">
-          {{ scope.row.eur }}
+          {{ scope.row.index }}
         </template>
       </el-table-column>
-      <el-table-column label="Usd">
+      <el-table-column label="当月同比增长">
         <template slot-scope="scope">
-          {{ scope.row.usd }}
+          {{ scope.row.rate }}
+        </template>
+      </el-table-column>
+      <el-table-column label="累计">
+        <template slot-scope="scope">
+          {{ scope.row.count }}
         </template>
       </el-table-column>
     </el-table>
@@ -34,7 +39,7 @@
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList } from '@/api/PPI'
 
 export default {
   data() {

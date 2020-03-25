@@ -14,27 +14,41 @@
           {{ scope.$index+1 }}
         </template>
       </el-table-column>
-      <el-table-column label="Date">
+      <el-table-column label="月份">
         <template slot-scope="scope">
-          {{ scope.row.date }}
+          {{ scope.row.time }}
         </template>
       </el-table-column>
-      <el-table-column label="Eur">
-        <template slot-scope="scope">
-          {{ scope.row.eur }}
-        </template>
+      <el-table-column label="制造业" align="center">
+        <el-table-column label="指数">
+          <template slot-scope="scope">
+            {{ scope.row.index1 }}
+          </template>
+        </el-table-column>
+        <el-table-column label="同比增长">
+          <template slot-scope="scope">
+            {{ scope.row.rate1 }}
+          </template>
+        </el-table-column>
       </el-table-column>
-      <el-table-column label="Usd">
-        <template slot-scope="scope">
-          {{ scope.row.usd }}
-        </template>
+      <el-table-column label="非制造业" align="center">
+        <el-table-column label="指数">
+          <template slot-scope="scope">
+            {{ scope.row.index2 }}
+          </template>
+        </el-table-column>
+        <el-table-column label="同比增长">
+          <template slot-scope="scope">
+            {{ scope.row.rate2 }}
+          </template>
+        </el-table-column>
       </el-table-column>
     </el-table>
   </div>
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList } from '@/api/PMI'
 
 export default {
   data() {

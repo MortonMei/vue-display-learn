@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Chart from '@/components/Charts/ER'
+import Chart from '@/components/Charts/PPI'
 
 export default {
   name: 'LineChart',
@@ -20,4 +20,3 @@ export default {
   height: calc(100vh - 84px);
 }
 </style>
-

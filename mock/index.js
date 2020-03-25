@@ -3,10 +3,16 @@ import { param2Obj } from '../src/utils'
 
 import user from './user'
 import table from './table'
+import gdp from './GDP'
+import pmi from './PMI'
+import ppi from './PPI'
 
 const mocks = [
   ...user,
-  ...table
+  ...table,
+  ...gdp,
+  ...pmi,
+  ...ppi
 ]
 
 // for front mock

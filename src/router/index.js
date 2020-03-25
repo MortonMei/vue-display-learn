@@ -56,36 +56,94 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/ecoindicator',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/ecoindicator/ER',
+    name: 'Ecoindicator',
+    meta:
+    {
+      title: '工业/经济指标',
+      icon: 'example'
+    },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'ER',
+        name: 'ER',
+        component: () => import('@/views/ecoindicator/ER/index'),
+        meta: { title: 'ER', icon: 'table' },
+        children: [
+          {
+            path: 'table',
+            name: 'table',
+            component: () => import('@/views/ecoindicator/ER/table'),
+            meta: { title: 'ERtable', icon: 'table' }
+          },
+          {
+            path: 'line',
+            name: 'line',
+            component: () => import('@/views/ecoindicator/ER/line'),
+            meta: { title: 'ERline', icon: 'table' }
+          }]
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
+        path: 'GDP',
+        name: 'GDP',
+        component: () => import('@/views/ecoindicator/GDP/index'),
+        meta: { title: 'GDP', icon: 'table' },
+        children: [
+          {
+            path: 'table',
+            name: 'GDPtable',
+            component: () => import('@/views/ecoindicator/GDP/table'),
+            meta: { title: 'GDPtable', icon: 'table' }
+          },
+          {
+            path: 'line',
+            name: 'GDPline',
+            component: () => import('@/views/ecoindicator/GDP/line'),
+            meta: { title: 'GDPline', icon: 'table' }
+          }
+        ]
+      },
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        path: 'PMI',
+        name: 'PMI',
+        component: () => import('@/views/ecoindicator/PMI/index'),
+        meta: { title: 'PMI', icon: 'table' },
+        children: [
+          {
+            path: 'table',
+            name: 'PMItable',
+            component: () => import('@/views/ecoindicator/PMI/table'),
+            meta: { title: 'PMItable', icon: 'table' }
+          },
+          {
+            path: 'line',
+            name: 'PMIline',
+            component: () => import('@/views/ecoindicator/PMI/line'),
+            meta: { title: 'PMIline', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'PPI',
+        name: 'PPI',
+        component: () => import('@/views/ecoindicator/PPI/index'),
+        meta: { title: 'PPI', icon: 'table' },
+        children: [
+          {
+            path: 'table',
+            name: 'PPItable',
+            component: () => import('@/views/ecoindicator/PPI/table'),
+            meta: { title: 'PPItable', icon: 'table' }
+          },
+          {
+            path: 'line',
+            name: 'PPIline',
+            component: () => import('@/views/ecoindicator/PPI/line'),
+            meta: { title: 'PPIline', icon: 'table' }
+          }
+        ]
       }
     ]
   },
@@ -133,13 +191,13 @@ export const constantRoutes = [
             children: [
               {
                 path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
+                component: () => import('@/views/ecoindicator/ER/table'),
                 name: 'Menu1-2-1',
                 meta: { title: 'Menu1-2-1' }
               },
               {
                 path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
+                component: () => import('@/views/ecoindicator/ER/line'),
                 name: 'Menu1-2-2',
                 meta: { title: 'Menu1-2-2' }
               }
