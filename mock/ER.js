@@ -4,8 +4,6 @@ const data = Mock.mock({
   'items|30': [{
     id: '@id',
     eur: '@integer(30, 50)',
-    // title: '@sentence(10, 1)',
-    // 'status|1': ['published', 'draft', 'deleted'],
     date: '@date',
     usd: '@integer(30, 50)'
   }]
@@ -13,7 +11,7 @@ const data = Mock.mock({
 
 export default [
   {
-    url: '/vue-admin-template/table/list',
+    url: '/vue-admin-template/ER/list',
     type: 'get',
     response: config => {
       const items = data.items

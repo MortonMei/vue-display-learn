@@ -2,14 +2,14 @@ import Mock from 'mockjs'
 import { param2Obj } from '../src/utils'
 
 import user from './user'
-import table from './table'
+import er from './ER'
 import gdp from './GDP'
 import pmi from './PMI'
 import ppi from './PPI'
 
 const mocks = [
   ...user,
-  ...table,
+  ...er,
   ...gdp,
   ...pmi,
   ...ppi

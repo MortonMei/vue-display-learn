@@ -5,7 +5,7 @@
 <script>
 import echarts from 'echarts'
 import resize from './mixins/resize'
-import { getList } from '@/api/table'
+import { getList } from '@/api/ER'
 
 export default {
   mixins: [resize],

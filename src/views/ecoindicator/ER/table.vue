@@ -4,7 +4,7 @@
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
-      height="300"
+      height="500"
       border
       fit
       highlight-current-row
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { getList } from '@/api/table'
+import { getList } from '@/api/ER'
 
 export default {
   data() {
@@ -51,6 +51,7 @@ export default {
       this.listLoading = true
       getList().then(response => {
         this.list = response.data.items
+        console.log(this.list)
         this.listLoading = false
       })
     }

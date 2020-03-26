@@ -264,7 +264,7 @@ export default {
       var ylist4 = []
       getList().then(response => {
         prelist = response.data.items
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 20; i++) {
           xlist.push(prelist[i].time)
           ylist1.push(prelist[i].index1)
           ylist2.push(prelist[i].index2)

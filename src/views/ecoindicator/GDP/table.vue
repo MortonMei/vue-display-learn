@@ -4,7 +4,7 @@
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
-      height="300"
+      height="500"
       border
       fit
       highlight-current-row
