@@ -6,13 +6,35 @@ import er from './ER'
 import gdp from './GDP'
 import pmi from './PMI'
 import ppi from './PPI'
+import cpp from './CPP'
+import bopp from './BOPP'
+import bopet from './BOPET'
+import al from './AL'
+import icis from './ICIS'
+import lldpe from './LLDPE'
+import pe from './PE'
+import pp from './PP'
+import ppo from './PPO'
+import ppz from './PPZ'
+import pta from './PTA'
 
 const mocks = [
   ...user,
   ...er,
   ...gdp,
   ...pmi,
-  ...ppi
+  ...ppi,
+  ...cpp,
+  ...bopp,
+  ...bopet,
+  ...al,
+  ...icis,
+  ...lldpe,
+  ...pe,
+  ...pp,
+  ...ppo,
+  ...ppz,
+  ...pta
 ]
 
 // for front mock

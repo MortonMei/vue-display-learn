@@ -49,7 +49,7 @@ export default {
         backgroundColor: '#394056',
         title: {
           top: 20,
-          text: '中国 国内生产总值',
+          text: '中国国内国民生产总值(GDP)',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
@@ -263,7 +263,7 @@ export default {
       var ylist3 = []
       var ylist4 = []
       getList().then(response => {
-        prelist = response.data.items
+        prelist = response.data
         for (var i = 0; i < 20; i++) {
           xlist.push(prelist[i].time)
           ylist1.push(prelist[i].index1)

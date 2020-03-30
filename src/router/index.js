@@ -72,16 +72,16 @@ export const constantRoutes = [
         meta: { title: 'ER', icon: 'table' },
         children: [
           {
-            path: 'table',
-            name: 'table',
+            path: 'ERtable',
+            name: 'ERtable',
             component: () => import('@/views/ecoindicator/ER/table'),
-            meta: { title: 'ERtable', icon: 'table' }
+            meta: { title: '汇率统计表', icon: 'table' }
           },
           {
-            path: 'line',
-            name: 'line',
+            path: 'ERline',
+            name: 'ERline',
             component: () => import('@/views/ecoindicator/ER/line'),
-            meta: { title: 'ERline', icon: 'table' }
+            meta: { title: '汇率变化', icon: 'table' }
           }]
       },
       {
@@ -91,16 +91,16 @@ export const constantRoutes = [
         meta: { title: 'GDP', icon: 'table' },
         children: [
           {
-            path: 'table',
+            path: 'GDPtable',
             name: 'GDPtable',
             component: () => import('@/views/ecoindicator/GDP/table'),
-            meta: { title: 'GDPtable', icon: 'table' }
+            meta: { title: 'GDP变化表', icon: 'table' }
           },
           {
-            path: 'line',
+            path: 'GDPline',
             name: 'GDPline',
             component: () => import('@/views/ecoindicator/GDP/line'),
-            meta: { title: 'GDPline', icon: 'table' }
+            meta: { title: 'GDP变化统计', icon: 'table' }
           }
         ]
       },
@@ -111,16 +111,16 @@ export const constantRoutes = [
         meta: { title: 'PMI', icon: 'table' },
         children: [
           {
-            path: 'table',
+            path: 'PMItable',
             name: 'PMItable',
             component: () => import('@/views/ecoindicator/PMI/table'),
-            meta: { title: 'PMItable', icon: 'table' }
+            meta: { title: 'PMI指数变化表', icon: 'table' }
           },
           {
-            path: 'line',
+            path: 'PMIline',
             name: 'PMIline',
             component: () => import('@/views/ecoindicator/PMI/line'),
-            meta: { title: 'PMIline', icon: 'table' }
+            meta: { title: 'PMI指数变化统计', icon: 'table' }
           }
         ]
       },
@@ -134,13 +134,256 @@ export const constantRoutes = [
             path: 'table',
             name: 'PPItable',
             component: () => import('@/views/ecoindicator/PPI/table'),
-            meta: { title: 'PPItable', icon: 'table' }
+            meta: { title: 'PPI指数变化表', icon: 'table' }
           },
           {
             path: 'line',
             name: 'PPIline',
             component: () => import('@/views/ecoindicator/PPI/line'),
-            meta: { title: 'PPIline', icon: 'table' }
+            meta: { title: 'PPI指数变化统计', icon: 'table' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/materialprice',
+    component: Layout,
+    redirect: '/materialprice/AL',
+    name: 'Materialprice',
+    meta:
+    {
+      title: '物料价格',
+      icon: 'example'
+    },
+    children: [
+      {
+        path: 'AL',
+        name: 'AL',
+        component: () => import('@/views/materialprice/AL/index'),
+        meta: { title: 'AL', icon: 'table' },
+        children: [
+          {
+            path: 'ALtable',
+            name: 'ALtable',
+            component: () => import('@/views/materialprice/AL/table'),
+            meta: { title: '铝箔价格变化表', icon: 'table' }
+          },
+          {
+            path: 'ALprice',
+            name: 'ALprice',
+            component: () => import('@/views/materialprice/AL/price'),
+            meta: { title: '铝箔价格变化', icon: 'table' }
+          },
+          {
+            path: 'ALstock',
+            name: 'ALstock',
+            component: () => import('@/views/materialprice/AL/stock'),
+            meta: { title: '铝箔库存变化', icon: 'table' }
+          }]
+      },
+      {
+        path: 'ICIS',
+        name: 'ICIS',
+        component: () => import('@/views/materialprice/ICIS/index'),
+        meta: { title: 'ICIS', icon: 'table' },
+        children: [
+          {
+            path: 'ICIStable',
+            name: 'ICIStable',
+            component: () => import('@/views/materialprice/ICIS/table'),
+            meta: { title: 'ICIS表格统计', icon: 'table' }
+          },
+          {
+            path: 'ICISline',
+            name: 'ICISline',
+            component: () => import('@/views/materialprice/ICIS/line'),
+            meta: { title: 'ICIS价格变化', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'LLDPE',
+        name: 'LLDPE',
+        component: () => import('@/views/materialprice/LLDPE/index'),
+        meta: { title: 'LLDPE', icon: 'table' },
+        children: [
+          {
+            path: 'LLDPEtable',
+            name: 'LLDPEtable',
+            component: () => import('@/views/materialprice/LLDPE/table'),
+            meta: { title: 'LLDPE变化表', icon: 'table' }
+          },
+          {
+            path: 'line',
+            name: 'PMIline',
+            component: () => import('@/views/materialprice/LLDPE/line'),
+            meta: { title: 'LLDPE变化统计', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'PE',
+        name: 'PE',
+        component: () => import('@/views/materialprice/PE/index'),
+        meta: { title: 'PE', icon: 'example' },
+        children: [
+          {
+            path: 'PEtable',
+            name: 'PEtable',
+            component: () => import('@/views/materialprice/PE/table'),
+            meta: { title: 'PE价格变化表', icon: 'table' }
+          },
+          {
+            path: 'PEline',
+            name: 'PEline',
+            component: () => import('@/views/materialprice/PE/line'),
+            meta: { title: 'PE变化统计', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'PPO',
+        name: 'PPO',
+        component: () => import('@/views/materialprice/PPO/index'),
+        meta: { title: 'PPO', icon: 'example' },
+        children: [
+          {
+            path: 'PPOtable',
+            name: 'PPOtable',
+            component: () => import('@/views/materialprice/PPO/table'),
+            meta: { title: 'PP0数据变化表', icon: 'table' }
+          },
+          {
+            path: 'PPOline',
+            name: 'PPOline',
+            component: () => import('@/views/materialprice/PPO/line'),
+            meta: { title: 'PP0变化统计', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'PPZ',
+        name: 'PPZ',
+        component: () => import('@/views/materialprice/PPZ/index'),
+        meta: { title: 'PPZ', icon: 'example' },
+        children: [
+          {
+            path: 'PPZtable',
+            name: 'PPZtable',
+            component: () => import('@/views/materialprice/PPZ/table'),
+            meta: { title: 'PPZ价格变化表', icon: 'table' }
+          },
+          {
+            path: 'PPZline',
+            name: 'PPZline',
+            component: () => import('@/views/materialprice/PPZ/line'),
+            meta: { title: 'PPZ变化统计', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'PTA',
+        name: 'PTA',
+        component: () => import('@/views/materialprice/PTA/index'),
+        meta: { title: 'PTA', icon: 'example' },
+        children: [
+          {
+            path: 'PTAtable',
+            name: 'PTAtable',
+            component: () => import('@/views/materialprice/PTA/table'),
+            meta: { title: 'PTA价格变化表', icon: 'table' }
+          },
+          {
+            path: 'PTAline',
+            name: 'PTAline',
+            component: () => import('@/views/materialprice/PTA/line'),
+            meta: { title: 'PTA变化统计', icon: 'table' }
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    path: '/productprice',
+    component: Layout,
+    redirect: '/productprice/CPP',
+    name: 'Productprice',
+    meta:
+    {
+      title: '成品价格',
+      icon: 'example'
+    },
+    children: [
+      {
+        path: 'CPP',
+        name: 'CPP',
+        component: () => import('@/views/productprice/CPP/index'),
+        meta: { title: 'CPP', icon: 'table' },
+        children: [
+          {
+            path: 'CPPtable',
+            name: 'CPPtable',
+            component: () => import('@/views/productprice/CPP/table'),
+            meta: { title: 'CPP价格变化表', icon: 'table' }
+          },
+          {
+            path: 'CPPcomplex',
+            name: 'CPPcomplex',
+            component: () => import('@/views/productprice/CPP/complex'),
+            meta: { title: 'CPP复合膜', icon: 'table' }
+          },
+          {
+            path: 'CPPaluminizer',
+            name: 'CPPaluminizer',
+            component: () => import('@/views/productprice/CPP/aluminizer'),
+            meta: { title: 'CPP镀铝基材', icon: 'table' }
+          },
+          {
+            path: 'CPPrcpp',
+            name: 'CPPrcpp',
+            component: () => import('@/views/productprice/CPP/rcpp'),
+            meta: { title: 'CPP蒸煮膜', icon: 'table' }
+          }]
+      },
+      {
+        path: 'BOPET',
+        name: 'BOPET',
+        component: () => import('@/views/productprice/BOPET/index'),
+        meta: { title: 'BOPET', icon: 'table' },
+        children: [
+          {
+            path: 'BOPETtable',
+            name: 'BOPETtable',
+            component: () => import('@/views/productprice/BOPET/table'),
+            meta: { title: 'BOPETtable', icon: 'table' }
+          },
+          {
+            path: 'BOPETline',
+            name: 'BOPETline',
+            component: () => import('@/views/productprice/BOPET/line'),
+            meta: { title: 'BOPETline', icon: 'table' }
+          }
+        ]
+      },
+      {
+        path: 'BOPP',
+        name: 'BOPP',
+        component: () => import('@/views/productprice/BOPP/index'),
+        meta: { title: 'BOPP', icon: 'table' },
+        children: [
+          {
+            path: 'BOPPtable',
+            name: 'BOPPtable',
+            component: () => import('@/views/productprice/BOPP/table'),
+            meta: { title: 'BOPPtable', icon: 'table' }
+          },
+          {
+            path: 'BOPPline',
+            name: 'BOPPline',
+            component: () => import('@/views/productprice/BOPP/line'),
+            meta: { title: 'BOPPline', icon: 'table' }
           }
         ]
       }

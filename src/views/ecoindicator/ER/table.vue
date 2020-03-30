@@ -1,19 +1,18 @@
 <template>
   <div class="app-container">
+    <body>
+      <p>中国外汇交易中心授权公布人民币汇率中间价近期统计</p>
+    </body>
+    <el-divider />
     <el-table
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
-      height="500"
+      height="400"
       border
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.$index+1 }}
-        </template>
-      </el-table-column>
       <el-table-column label="Date">
         <template slot-scope="scope">
           {{ scope.row.date }}
@@ -50,8 +49,7 @@ export default {
     fetchData() {
       this.listLoading = true
       getList().then(response => {
-        this.list = response.data.items
-        console.log(this.list)
+        this.list = response.data
         this.listLoading = false
       })
     }

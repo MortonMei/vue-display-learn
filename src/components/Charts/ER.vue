@@ -49,7 +49,7 @@ export default {
         backgroundColor: '#394056',
         title: {
           top: 20,
-          text: 'ER汇率',
+          text: '中国外汇交易中心授权公布人民币汇率中间价总变化统计',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
@@ -193,7 +193,7 @@ export default {
       var ylist1 = []
       var ylist2 = []
       getList().then(response => {
-        prelist = response.data.items
+        prelist = response.data
         for (var i = 0; i < 12; i++) {
           xlist.push(prelist[i].date)
           ylist1.push(prelist[i].usd)

@@ -49,7 +49,7 @@ export default {
         backgroundColor: '#394056',
         title: {
           top: 20,
-          text: '中国 工业品出厂价格指数(PPI)',
+          text: '中国工业品出厂价格指数（PPI）月度指数变化统计',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
@@ -193,7 +193,7 @@ export default {
       var ylist1 = []
       var ylist2 = []
       getList().then(response => {
-        prelist = response.data.items
+        prelist = response.data
         for (var i = 0; i < 12; i++) {
           xlist.push(prelist[i].time)
           ylist1.push(prelist[i].rate)

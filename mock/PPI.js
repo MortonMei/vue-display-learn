@@ -18,10 +18,7 @@ export default [
       const items = data.items
       return {
         code: 20000,
-        data: {
-          total: items.length,
-          items: items
-        }
+        data: items
       }
     }
   }

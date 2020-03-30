@@ -1,19 +1,18 @@
 <template>
   <div class="app-container">
+    <body>
+      <p>中国工业品出厂价格指数（PPI）</p>
+    </body>
+    <el-divider />
     <el-table
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
-      height="500"
+      height="400"
       border
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="ID" width="95">
-        <template slot-scope="scope">
-          {{ scope.$index+1 }}
-        </template>
-      </el-table-column>
       <el-table-column label="月份">
         <template slot-scope="scope">
           {{ scope.row.time }}
@@ -55,7 +54,7 @@ export default {
     fetchData() {
       this.listLoading = true
       getList().then(response => {
-        this.list = response.data.items
+        this.list = response.data
         this.listLoading = false
       })
     }

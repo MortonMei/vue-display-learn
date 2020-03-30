@@ -49,7 +49,7 @@ export default {
         backgroundColor: '#394056',
         title: {
           top: 20,
-          text: '中国 国内生产总值',
+          text: '中国采购经理人指数（PMI）月度指数变化统计',
           textStyle: {
             fontWeight: 'normal',
             fontSize: 16,
@@ -193,7 +193,7 @@ export default {
       var ylist1 = []
       var ylist2 = []
       getList().then(response => {
-        prelist = response.data.items
+        prelist = response.data
         for (var i = 0; i < 12; i++) {
           xlist.push(prelist[i].time)
           ylist1.push(prelist[i].index1)
